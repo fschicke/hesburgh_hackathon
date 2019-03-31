@@ -39,6 +39,7 @@ def start_service():
 	# event handlers
 	dispatcher.connect('put_event', '/events/:eid', controller=eventsController, action='PUT_EVENT', conditions=dict(method=['PUT']))
 	dispatcher.connect('post_event', '/events/', controller=eventsController, action='POST_EVENT', conditions=dict(method=['PUT']))
+	dispatcher.connect('get_events', '/events/', controller=eventsController, action='GET_EVENTS', conditions=dict(method=['GET']))
 	dispatcher.connect('delete_event', '/events/:eid', controller=eventsController, action='DELETE_EVENT', conditions=dict(method=['DELETE']))
 	
 	# vote handler

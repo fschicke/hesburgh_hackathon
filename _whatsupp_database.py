@@ -150,3 +150,7 @@ class _whatsupp_database:
 			if counter == 5:
 				break
 		return retDict
+	
+	# return all events
+	def get_events(self):
+		return self.events

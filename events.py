@@ -87,3 +87,20 @@ class eventsController:
 	def GET_TAGS(self):
 		ret =  self.wudb.get_tags()
 		return json.dumps({"result":ret})
+	
+	# return list of all events as dicts
+	def GET_EVENTS(self):
+		parsed = []
+		for key, val in self.wudb.get_events().items():
+			entry = {}
+			entry["eid"] = key
+			entry["title"] = val[0]
+			entry["description"] = val[1]
+			entry["tags"] = val[2]
+			entry["startDate"] = val[3]
+			entry["endDate"] = val[4]
+			entry["eventType"] = val[5]
+			entry["maxAttendance"] = val[6]
+			entry["location"] = val[7]
+			parsed.append(entry)
+		return json.dumps({"result": parsed})
