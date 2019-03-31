@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
+<script>
+    var all_activities = ["KSA", "AAA", "Engineering", "CSE", "LUG", "St. Liams", "Swimming", "5K", "health", "mental health", "Frisbee"];
+    var my_activities = [];
+</script>
+    
 <head>
+
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,35 +43,37 @@
               <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                    <input type="text" class="form-control form-control-user" id="FirstName" placeholder="First Name">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                    <input type="text" class="form-control form-control-user" id="LastName" placeholder="Last Name">
                   </div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="email" class="form-control form-control-user" id="InputEmail" placeholder="Notre Dame email">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                    <input type="text" class="form-control form-control-user" id="ClassYear" placeholder="Repeat Password">
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user" id="InputPassword" placeholder="Password">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="RepeatPassword" placeholder="Repeat Password">
+                  </div>
+                </div>
+                <button type='button' onclick="tryRegister()" class="btn btn-primary btn-user btn-block">
                   Register Account
-                </a>
+                </button>
                 <hr>
-                <a href="index.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a>
-                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a>
               </form>
               <hr>
+                <button type='button' onclick="modalOn()" class="btn btn-primary btn-user btn-block">
+                  TestModal
+                </button>
               <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div>
@@ -77,9 +85,35 @@
         </div>
       </div>
     </div>
-
+<!-- Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valid Account! Just One More Step...</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          What are you interested in knowing about? Select Tags you would like to be notified about! The more tags you have, the more you'll see! The more focused your tags are, the more personalized the content will be!
+        </p>
+        <h3> Your Tags</h3>  
+        <div id="userChips" class="border-bottom-success  border-left-success">
+        </div>
+        <h3>Possible Tags</h3>
+        <div id="allTags" class="border-left-primary border-bottom-primary">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" >Save changes</button>
+      </div>
+    </div>
   </div>
-
+</div>                                                        
+      </div>
+</div>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -91,5 +125,87 @@
   <script src="js/sb-admin-2.min.js"></script>
 
 </body>
-
+  <script>
+    console.log(all_activities.length);
+    console.log(typeof all_activities);
+    var i = 0;
+    for (i; i < all_activities.length; i++) {
+      $('#allTags').append('<button type="button" class="pill_tag1 btn btn-warning btn-sm" id="temporary_id" style="margin:2px">' + all_activities[i] + '</button>');
+      document.getElementById("temporary_id").id = all_activities[i];
+      console.log(document.getElementById(all_activities[i]));
+    }
+  </script>
 </html>
+
+<script>
+    $("#allTags").on("click", ".pill_tag1", function(){
+        if(all_activities.includes(this.id)){
+            my_activities.push(this.id);
+            all_activities.splice( all_activities.indexOf(this.id), 1 );
+            addTag(this.id);
+            console.log(all_activities);
+            return;
+        }
+        return;
+    });
+    
+    $("#userChips").on("click", ".pill_tag2", function(){
+        console.log("okokok");    
+        if(my_activities.includes(this.id)) {
+            console.log("do i ever make it here");
+            all_activities.push(this.id);
+            my_activities.splice(my_activities.indexOf(this.id), 1 );
+            removeTag(this.id);
+            return;
+        }
+        console.log(my_activities);
+        return
+    }); 
+    
+    function addTag(tagId) {
+        var element = document.getElementById(tagId);
+        element.parentNode.removeChild(element);
+        $('#userChips').append('<button type="button" class="pill_tag2 btn btn-success btn-sm" id="temporary_id" style="margin:2px">' + tagId + '</button>');
+        console.log(my_activities);
+        document.getElementById("temporary_id").id = tagId;
+    }
+    
+    function removeTag(tagId){
+        var element = document.getElementById(tagId);
+        element.parentNode.removeChild(element);
+        $('#allTags').append('<button type="button" class="pill_tag1 btn btn-warning btn-sm" id="temporary_id" style="margin:2px">' + tagId + '</button>');
+        document.getElementById("temporary_id").id = tagId;
+    }
+    
+    function modalOn(){
+        console.log('HELLLLLLLP');
+        $('#logoutModal').modal();
+    }
+    
+    function tryRegister(){
+        
+        if($('#InputEmail').val() == "" || $('#InputPassword').val() == "" || $('#FirstName').val() == "" || $('#LastName').val() == "" || $('#RepeatPassword').val() == ""){
+            console.log("a field is mssing");
+            return;
+        }
+        var email = ($('#InputEmail').val()).split("@");
+        if (email[1] !== "nd.edu"){
+            console.log("Not a valid ND email");
+            return;
+        }
+        console.log(typeof $('#InputEmail').val())
+        if ($('#InputPassword').val() !== $('#RepeatPassword').val()){
+            console.log('Passwords do not match')
+            return
+        }
+        var userData = {
+            firstName   : $('#FirstName').val(),
+            lastName    : $('#LastName').val(),
+            password    : $('#InputPassword').val(),
+            email       : $('#InputEmail').val()
+            
+        };
+        $('#logoutModal').modal();
+        console.log('end');
+    }
+</script>
