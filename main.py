@@ -13,6 +13,7 @@ wudb = _whatsupp_database() # shared across all controllers
 # load all data
 wudb.load_events("/home/btrossen/fschicke.github.io/events.dat")
 wudb.load_users("/home/btrossen/fschicke.github.io/users.dat")
+wudb.load_votes("/home/btrossen/fschicke.github.io/votes.dat")
 dispatcher = cherrypy.dispatch.RoutesDispatcher()
 
 
@@ -35,6 +36,9 @@ dispatcher.connect('delete_event', '/events/:eid', controller=eventsController, 
 
 # vote handler
 dispatcher.connect('vote', '/vote/:eid', controller=eventsController, action='VOTE', conditions=dict(method=['PUT']))
+
+# top 5 handler
+dispatcher.connect('top5', '/top5/', controller=eventsController, action='TOP5', conditions=dict(method=['PUT']))
 
 # users handlers
 dispatcher.connect('get_user', '/users/:net_id', controller=usersController, action='GET_USER', conditions=dict(method=['GET']))
