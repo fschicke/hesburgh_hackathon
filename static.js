@@ -1,16 +1,17 @@
 (function() {
 
-var TodayDate;
 var currentSunday;
-var currentWeekday;
+var offset;
+
 
 var newEvent = false;
 
   $(document).ready(initialize);
   function initialize() {
-    TodayDate = new Date();
+    currentSunday = new Date();
     initializeDay();
     setDate();
+	offset = currentSunday.getDay();
     $('#leftDate').click(subtract7Days);
     $('#rightDate').click(add7Days);
     $('#sidebarToggle').click(function() {
@@ -26,35 +27,34 @@ var newEvent = false;
 
 
   function initializeDay() {
-    var w = TodayDate.getDay();
+    var w = currentSunday.getDay();
     $('#' + w.toString()).attr("checked","checked");
   }
 
+
   function setDate() { 
 
-    var m = TodayDate.getMonth()+1;
-    var d = TodayDate.getDate();
-    var y = TodayDate.getFullYear();
+    var m = currentSunday.getMonth()+1;
+    var d = currentSunday.getDate();
+    var y = currentSunday.getFullYear();
     $('#month').html(m);
     $('#day').html(d);
     $('#year').html(y);
 
   }
 
-  
-
-
+ 
   function add7Days() {
-    var oneWeekLater = new Date(TodayDate);
-    oneWeekLater.setDate(TodayDate.getDate()+7);
-    TodayDate = oneWeekLater;
+    var oneWeekLater = new Date(currentSunday);
+    oneWeekLater.setDate(currentSunday.getDate()+7);
+    currentSunday = oneWeekLater;
     setDate();
   }
 
   function subtract7Days() {
-    var oneWeekLater = new Date(TodayDate);
-    oneWeekLater.setDate(TodayDate.getDate()-7);
-    TodayDate = oneWeekLater;
+    var oneWeekLater = new Date(currentSunday);
+    oneWeekLater.setDate(currentSunday.getDate()-7);
+    currentSunday = oneWeekLater;
     setDate();
   }
 
