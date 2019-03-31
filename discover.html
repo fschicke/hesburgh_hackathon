@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Blank</title>
+
+  <style>
+
+h1 {
+    font-size: 100px;
+}
+div > input:checked ~ article { width: 65%; opacity: 1; }
+.instructions {
+    margin-top:20px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+
+  form { 
+    position: relative; 
+    background: -webkit-linear-gradient(bottom,#eaeaea, #fafafa);
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 0 1px 1px rgba(0,0,0,.65);
+    border-radius: 3px;
+    border: solid 1px #ddd;
+    width: 100%; 
+    height: 450px;
+    overflow: hidden;
+}
+input { display: none; }
+input:checked + label, label:hover { 
+    background: #4D90FE;
+    background: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+    border: solid 1px rgba(0,0,0,.15);
+    color: gray; 
+    box-shadow: 0 1px 1px rgba(0,0,0,.65), 0 1px 0 rgba(255,255,255,.1) inset;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.6);
+}
+label { 
+    background-color: rgba(179,153,0,0.7);
+    font-family: helvetica;
+    cursor: pointer; 
+    display: block; 
+    border: solid 1px transparent;
+    text-align: center; 
+    line-height: 40px; 
+    border-radius: 3px; 
+    float: left;
+    width: 5%;
+    height: 100%;
+    line-height: 430px;
+}
+label:last-child { margin-right: 0; }
+label {     
+    background:; 
+    border: solid 1px rgba(0,0,0,.15); 
+}
+
+a.d-block.card-header.py-3 {
+    background-color: rgba(34,74,190,0.3);
+    padding-left: 10px;
+    opacity: 1;
+}
+
+.halfPage {
+    background-color: whitbackground-color: white;
+    margin-top: 20px;
+    width: 100%;
+    height: 360px;
+    border-radius: 15px;
+    opacity: 0.85;
+    overflow-y: scroll;
+}
+
+.card-body {
+    background-color: rgba(88,96,26,0.5);
+}
+
+article { 
+
+    width: 0;
+    height: 400px;  
+    overflow: hidden; 
+    -webkit-transition: width .25s linear, opacity .2s linear; 
+    transition: width .25s linear, opacity .3s linear; 
+    position: relative; 
+    top: 5px;
+    margin-bottom: 0;
+    padding: 0;
+    margin-right: 10px;
+    opacity: 0;
+    float: left;
+}
+
+.bg-gradient-primary {
+    background-color: rgba(88,96,26,1) !important;
+}
+
+
+
+div:last-child article { margin-right: 0; }
+article p {
+     color: #333;
+    font-family: helvetica;
+    font-size: 12px;
+    line-height: 18px;
+    width: 100%;    
+    padding: 5px 10px;
+}
+  </style>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">What's Upp</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item text-center">
+          <span style="color:white">Welcome, username!</span>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading" style="margin-top:25px;">
+        About Me
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" >
+            <i class="fas fa-fw fa-user-circle"></i>
+         <span>Edit Profile</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-calendar"></i>
+          <span>Events</span>
+        </a>
+
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Explore
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-search"></i>
+          <span>Discover</span>
+        </a>
+
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <a href="#" class="btn btn-success btn-icon-split" style="width:80%;margin-left:10%;">
+        <span class="icon text-gray-50">
+            <i class="fas fa-fw fa-plus"></i>
+        </span>
+        <span id="newEvent" class="text">Create New Event</span>
+      </a>
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline" style="margin-top:30px">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <div class="container">
+        <div class="discoverTitle">
+            <h1 class="text-center text-white" style="font-size: 100px;">Explore Events</h1>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-6"><h3 style="font-size:40px" class="text-center text-gray">What's Hot</h3>
+                
+                <div class="halfPage">
+<div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-1">
+                            <h6 class="text-center m-0">M</h6>
+                        </div>
+                        <div class="col-sm-2"><h6 class="text-center m-0">9:00a</h6></div>
+                        <div class="col-sm-8">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                       
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample">
+                  <div class="card-body">
+                    End Time: 4:00p<br> 
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+<a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-1">
+                            <h6 class="text-center m-0">M</h6>
+                        </div>
+                        <div class="col-sm-2"><h6 class="text-center m-0">9:00a</h6></div>
+                        <div class="col-sm-8">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                       
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    End Time: 4:00p<br> 
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+
+<a href="#collapseCardExample3" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-1">
+                            <h6 class="text-center m-0">M</h6>
+                        </div>
+                        <div class="col-sm-2"><h6 class="text-center m-0">9:00a</h6></div>
+                        <div class="col-sm-8">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                       
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample3">
+                  <div class="card-body">
+                    End Time: 4:00p<br> 
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+     
+<a href="#collapseCardExample4" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-1">
+                            <h6 class="text-center m-0">M</h6>
+                        </div>
+                        <div class="col-sm-2"><h6 class="text-center m-0">9:00a</h6></div>
+                        <div class="col-sm-8">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                       
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample4">
+                  <div class="card-body">
+                    End Time: 4:00p<br> 
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+<a href="#collapseCardExample5" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-1">
+                            <h6 class="text-center m-0">M</h6>
+                        </div>
+                        <div class="col-sm-2"><h6 class="text-center m-0">9:00a</h6></div>
+                        <div class="col-sm-8">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                       
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample5">
+                  <div class="card-body">
+                    End Time: 4:00p<br> 
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+               </div>
+
+           </div>
+
+         </div>
+          <div class="col-sm-6"><h3 style="font-size:40px" class="text-center text-gray">Random</h3>
+              <div class="halfPage">
+              <div class="row">
+                  <div class="col-sm-10 offset-sm-1" style="text-align:center;font-size:30px;color:#224abe">                  
+                    <div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-gray-50">
+                      <i class="fas fa-random"></i>
+                    </span>
+                    <span class="text">GENERATE RANDOM</span>
+                  </a>
+     
+                    </div>
+                   </div>  
+                   <div class="row" style="margin-top:40px;">
+                    <div class="col-sm-12">
+                        <div class="card shadow mb-4 currentEvent">
+               <a href="#collapseCardExample6" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample6">
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-1">
+                            <h6 class="text-center m-0">M</h6>
+                        </div>
+                        <div class="col-sm-2"><h6 class="text-center m-0">9:00a</h6></div>
+                        <div class="col-sm-8">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                       
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample6">
+                  <div class="card-body">
+                    End Time: 4:00p<br>
+                    Tags: basketball jump rope sports<br>
+                    Category: <br>
+                    Attendance: <br>
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+
+                    </div>
+                   </div>
+                    
+              </div>
+          </div>
+
+
+   <!-- page wrapper end -->
+        </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+<!-- JQuery CDN -->
+      <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+      <!-- Materialize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+      <!-- Personal scripts -->
+      <script src="./static.js"></script>
+
+</body>
+
+</html>

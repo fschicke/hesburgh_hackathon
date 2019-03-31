@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Blank</title>
+
+  <style>
+
+  .content-wrapper {
+     background-image: url("./tdj.jpg");
+     background-size: 100%;
+     background-position: center;
+  } 
+ 
+
+  h1 {
+    font-size: 50px !important;
+    margin-bottom: 0px !important;
+  }
+
+  form { 
+    position: relative; 
+    background: -webkit-linear-gradient(bottom,#eaeaea, #fafafa);
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 0 1px 1px rgba(0,0,0,.65);
+    border-radius: 3px;
+    border: solid 1px #ddd;
+    width: 100%; 
+    height: 450px;
+    overflow: hidden;
+}
+input { display: none; }
+input:checked + label, label:hover { 
+    background: #4D90FE;
+    background: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+    border: solid 1px rgba(0,0,0,.15);
+    color: white; 
+    box-shadow: 0 1px 1px rgba(0,0,0,.65), 0 1px 0 rgba(255,255,255,.1) inset;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.6);
+}
+label { 
+    font-family: helvetica;
+    cursor: pointer; 
+    display: block; 
+    border: solid 1px transparent;
+    text-align: center; 
+    line-height: 40px; 
+    border-radius: 3px; 
+    float: left;
+    width: 5%;
+    height: 100%;
+    line-height: 430px;
+}
+label:last-child { margin-right: 0; }
+label {     
+    background: rgba(77, 144, 254, .5); 
+    border: solid 1px rgba(0,0,0,.15); 
+}
+
+a.d-block.card-header.py-3 {
+    padding-left: 10px;
+}
+
+article { 
+
+    width: 0;
+    height: 400px;  
+    overflow: hidden; 
+    -webkit-transition: width .25s linear, opacity .2s linear; 
+    transition: width .25s linear, opacity .3s linear; 
+    position: relative; 
+    top: 5px;
+    margin-bottom: 0;
+    padding: 0;
+    margin-right: 10px;
+    opacity: 0;
+    float: left;
+}
+div:last-child article { margin-right: 0; }
+article p {
+     color: #333;
+    font-family: helvetica;
+    font-size: 12px;
+    line-height: 18px;
+    width: 100%;    
+    padding: 5px 10px;
+}
+
+
+.currentEvent {
+    margin-left:5%;
+    width: 90%;
+}
+
+div > input:checked ~ article { width: 65%; opacity: 1; }
+
+
+
+
+  </style>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">What's Upp</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item text-center">
+          <span style="color:white">Welcome, username!</span>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading" style="margin-top:25px;">
+        About Me
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" >
+            <i class="fas fa-fw fa-user-circle"></i>
+         <span>Edit Profile</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-calendar"></i>
+          <span>Events</span>
+        </a>
+
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Explore
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-search"></i>
+          <span>Discover</span>
+        </a>
+
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <a href="#" class="btn btn-success btn-icon-split" style="width:80%;margin-left:10%;">
+        <span class="icon text-white-50">
+            <i class="fas fa-fw fa-plus"></i>
+        </span>
+        <span id="newEvent" class="text">Create New Event</span>
+      </a>
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline" style="margin-top:30px">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+      
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="text-center h3 mb-4 text-gray-800" style="margin: 20px 0px 0px 0px !important;">Week Of:</h1>
+          <div class=""><p class="text-center h3 mb-4 text-gray-800"><a href="#" id="leftDate">&#9664;</a>
+              
+              
+<span id="month">
+
+</span>
+/
+<span id="day">
+
+</span>
+/
+<span id="year">
+
+</span>
+
+
+<a href="#" id="rightDate">&#9654;</a></p></div>
+        <form>
+  <div>    
+    <input type="radio" name="size" id="0" value="0" />     
+    <label for="0">Su</label>
+        <article>
+                      <!-- Collapsable Card Example -->
+              <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h6 class="text-center m-0">9:00a</h6>
+                        </div>
+                        <div class="col-sm-7">
+                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        </div>
+                        <div class="col-sm-3"><h6 class="text-center m-0">South Dining Hall</h6></div>
+                    </div>
+
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    End Time: 4:00p<br> 
+                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
+                  </div>
+                </div>
+              </div>
+        
+        </article>
+    </div>
+    <div>
+    <input type="radio" name="size" id="1" value="1"/> 
+    <label for="1">M</label>
+            <article>
+                          <!-- Collapsable Card Example -->
+              <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
+                  </div>
+                </div>
+              </div></article>
+    </div>
+    <div>
+    <input type="radio" name="size" id="2" value="2" />     
+    <label for="2">Tu</label>
+    <article>
+<!-- Collapsable Card Example -->
+              <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample">
+                  <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
+                  </div>
+                </div>
+              </div>
+              <!-- Collapsable Card Example -->
+              <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
+                  </div>
+                </div>
+              </div>
+        </article>
+    <div>
+    <input type="radio" name="size" id="3" value="3" />     
+    <label for="3">W</label>
+        <article>
+                      <!-- Collapsable Card Example -->
+              <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
+                  </div>
+                </div>
+              </div></article>
+    </div>
+    <div>    
+    <input type="radio" name="size" id="4" value="4" />     
+    <label for="4">Th</label>
+        <article>
+                      <!-- Collapsable Card Example -->
+              <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
+                  </div>
+                </div>
+              </div>
+        </article>
+    </div>
+  <div>    
+    <input type="radio" name="size" id="5" value="5" />     
+    <label for="5">F</label>
+        <article></article>
+    </div>
+  <div>    
+    <input type="radio" name="size" id="6" value="6" />     
+    <label for="6">S</label>
+        <article>
+        
+        <div class="card shadow mb-4 currentEvent">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="collapseCardExample2">
+                  <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
+                  </div>
+                </div>
+              </div>
+
+        </article>
+    </div>
+  
+</form>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; What's Upp 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+<!-- JQuery CDN -->
+      <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+      <!-- Materialize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+      <!-- Personal scripts -->
+      <script src="./static.js"></script>
+  </head>
+
+</body>
+
+</html>
