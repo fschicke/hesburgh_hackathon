@@ -1,0 +1,32 @@
+.bg-gradient-primary {
+	background-image: linear-gradient(180deg,#C99700 10%,#E1B900 100%);
+	background-color: #0C2340;
+}
+
+.sidebar {
+	background-image: linear-gradient(180deg,#0C2340 10%,#0C2340 100%);
+}
+
+.container {
+	background-color: #0C2340;
+}
+
+.bg-login-image {
+	background: url("https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/23794809_10156796927838098_5294834033329399851_n.jpg?_nc_cat=100&_nc_ht=scontent-ort2-1.xx&oh=00c62942d71072e8382468ee522d9004&oe=5D10CB82");
+}
+
+.bg-register-image {
+	background: url("https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/23794809_10156796927838098_5294834033329399851_n.jpg?_nc_cat=100&_nc_ht=scontent-ort2-1.xx&oh=00c62942d71072e8382468ee522d9004&oe=5D10CB82");
+}
+
+.btn {
+	background-color: #0C2340;
+	border-color: #C99700;
+}
+
+.form-group {
+	margin-left: 25px;
+	margin-bottom: 25px;
+	margin-right: 25px;
+	width: 30%;
+}
