@@ -35,7 +35,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
     border-radius: 3px;
     border: solid 1px #ddd;
     width: 100%; 
-    height: 450px;
+    height: 380px;
     overflow: hidden;
 }
 input { display: none; }
@@ -43,12 +43,12 @@ input:checked + label, label:hover {
     background: #4D90FE;
     background: -webkit-linear-gradient(top,#4D90FE,#4787ED);
     border: solid 1px rgba(0,0,0,.15);
-    color: gray; 
+    color: #0C2340; 
     box-shadow: 0 1px 1px rgba(0,0,0,.65), 0 1px 0 rgba(255,255,255,.1) inset;
     text-shadow: 0 -1px 0 rgba(0,0,0,.6);
 }
 label { 
-    background-color: rgba(179,153,0,0.7);
+    background-color: #0C2340;
     font-family: helvetica;
     cursor: pointer; 
     display: block; 
@@ -63,28 +63,48 @@ label {
 }
 label:last-child { margin-right: 0; }
 label {     
-    background:; 
+    background: #0C2340; 
     border: solid 1px rgba(0,0,0,.15); 
 }
 
-a.d-block.card-header.py-3 {
-    background-color: rgba(34,74,190,0.3);
+a.btn {
+    background-color: rgb(174,145,66);
+    border: 1px rgb(174,145,66) solid;
+    color: white;
+}
+
+a.btn:hover {
+    color: white;
+    background-color: #1cc88a;
+    border: 1px #1cc88a solid;
+}
+
+a.d-block.card-header.py-3, a.d-block.card-header.py-3::after {
+    background-color: #0C2340;
     padding-left: 10px;
     opacity: 1;
 }
 
+a.d-block.card-header.py-3, a.d-block.card-header.py-3 h6  {
+    color: white !important;
+}
+
 .halfPage {
-    background-color: whitbackground-color: white;
     margin-top: 20px;
     width: 100%;
-    height: 360px;
-    border-radius: 15px;
+    height: 450px;
     opacity: 0.85;
     overflow-y: scroll;
 }
 
+h6 {
+    color: white;
+    background-color: #0C2340 !important;
+}
+
 .card-body {
-    background-color: rgba(88,96,26,0.5);
+    color: white;
+    background-color: rgb(174,145,66) !important;
 }
 
 article { 
@@ -101,10 +121,6 @@ article {
     margin-right: 10px;
     opacity: 0;
     float: left;
-}
-
-.bg-gradient-primary {
-    background-color: rgba(88,96,26,1) !important;
 }
 
 
@@ -144,7 +160,7 @@ article p {
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="fas fa-snowboarding "></i>
         </div>
         <div class="sidebar-brand-text mx-3">What's Upp</div>
       </a>
@@ -167,15 +183,15 @@ article p {
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" >
+        <a class="nav-link collapsed" href="profile.html" >
             <i class="fas fa-fw fa-user-circle"></i>
          <span>Edit Profile</span>
         </a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <li class="nav-item">
+        <a class="nav-link" href="events.html" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-calendar"></i>
           <span>Events</span>
         </a>
@@ -192,8 +208,8 @@ article p {
         Explore
       </div>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <li class="nav-item active">
+        <a class="nav-link" href="discover.html" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-search"></i>
           <span>Discover</span>
         </a>
@@ -205,7 +221,7 @@ article p {
       <hr class="sidebar-divider d-none d-md-block">
 
       <a href="#" class="btn btn-success btn-icon-split" style="width:80%;margin-left:10%;">
-        <span class="icon text-gray-50">
+        <span class="icon text-white-50">
             <i class="fas fa-fw fa-plus"></i>
         </span>
         <span id="newEvent" class="text">Create New Event</span>
@@ -220,13 +236,12 @@ article p {
     <!-- End of Sidebar -->
 
     <div class="container">
-        <div class="discoverTitle">
-            <h1 class="text-center text-white" style="font-size: 100px;">Explore Events</h1>
-        </div>
 
-        <div class="row">
 
-            <div class="col-sm-6"><h3 style="font-size:40px" class="text-center text-gray">What's Hot</h3>
+        <div class="row" style="margin-top:2px;">
+            <div class="col-sm-12" style="text-align:center;"><h1 style="font-size:50px">Discover:</h1></div>
+
+            <div class="col-sm-6"><h3 style="font-size:30px" class="text-center text-gray">What's Hot</h3>
                 
                 <div class="halfPage">
 <div class="card shadow mb-4 currentEvent">
@@ -338,16 +353,16 @@ article p {
            </div>
 
          </div>
-          <div class="col-sm-6"><h3 style="font-size:40px" class="text-center text-gray">Random</h3>
+          <div class="col-sm-6"><h3 style="font-size:30px" class="text-center text-gray">Random</h3>
               <div class="halfPage">
               <div class="row">
                   <div class="col-sm-10 offset-sm-1" style="text-align:center;font-size:30px;color:#224abe">                  
                     <div class="my-2"></div>
-                  <a href="#" class="btn btn-info btn-icon-split">
-                    <span class="icon text-gray-50">
+                  <a href="#" class="btn btn-icon-split">
+                    <span class="icon text-white-50">
                       <i class="fas fa-random"></i>
                     </span>
-                    <span class="text">GENERATE RANDOM</span>
+                    <span class="text">RANDOM EVENT IN NEXT WEEK</span>
                   </a>
      
                     </div>

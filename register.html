@@ -2,7 +2,7 @@
 <html lang="en">
     
 <script>
-    var all_activities = ["KSA", "AAA", "Engineering", "CSE", "LUG", "St. Liams", "Swimming", "5K", "health", "mental health", "Frisbee"];
+    var all_activities = ["KSA", "AAA", "Engineering", "CSE", "LUG", "St. Liams", "Swimming", "5K", "Health", "Mental Health", "Frisbee", "Hackathon", "Rock Climbing", "Business"].sort();
     var my_activities = [];
 </script>
     
@@ -23,7 +23,29 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/register.css" rel="stylesheet">
 
+<style>
+	.border-bottom-success {
+		border-bottom: black !important;
+	}
+
+	.border-bottom-primary {
+		border-bottom: black !important;
+	}
+	
+	.border-left-primary {
+		border-left: black !important;
+	}
+
+	.border-left-success {
+		border-left: black !important;
+	}
+
+	.modal-footer {
+		margin-top: 25px;
+	}	
+</style>
 </head>
 
 <body class="bg-gradient-primary">
@@ -70,13 +92,6 @@
                 </button>
                 <hr>
               </form>
-              <hr>
-                <button type='button' onclick="modalOn()" class="btn btn-primary btn-user btn-block">
-                  TestModal
-                </button>
-              <div class="text-center">
-                <a class="small" href="forgot-password.html">Forgot Password?</a>
-              </div>
               <div class="text-center">
                 <a class="small" href="login.html">Already have an account? Login!</a>
               </div>
@@ -96,18 +111,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>
-          What are you interested in knowing about? Select Tags you would like to be notified about! The more tags you have, the more you'll see! The more focused your tags are, the more personalized the content will be!
+        <p align="left">
+          What are you interested in knowing about? Select tags you would like to be notified about! 
+</br></br>
+The more tags you have, the more you'll see! The more focused your tags are, the more personalized the content will be!
         </p>
         <h3> Your Tags</h3>  
         <div id="userChips" class="border-bottom-success  border-left-success">
         </div>
-        <h3>Possible Tags</h3>
+        <h3 style="margin-top: 25px;">Possible Tags</h3>
         <div id="allTags" class="border-left-primary border-bottom-primary">
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" >Save changes</button>
+        <button type="button" class="btn btn-primary" >Save Changes</button>
       </div>
     </div>
   </div>

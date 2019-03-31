@@ -40,7 +40,7 @@
 input { display: none; }
 input:checked + label, label:hover { 
     background: #4D90FE;
-    background: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+    background: -webkit-linear-gradient(top,#AE9142,#AE9142);
     border: solid 1px rgba(0,0,0,.15);
     color: white; 
     box-shadow: 0 1px 1px rgba(0,0,0,.65), 0 1px 0 rgba(255,255,255,.1) inset;
@@ -61,12 +61,24 @@ label {
 }
 label:last-child { margin-right: 0; }
 label {     
-    background: rgba(77, 144, 254, .5); 
+    background: #0C2340; 
     border: solid 1px rgba(0,0,0,.15); 
 }
 
 a.d-block.card-header.py-3 {
     padding-left: 10px;
+}
+
+a.btn {
+    background-color: rgb(174,145,66);
+    border: 1px rgb(174,145,66) solid;
+    color: white;
+}
+
+a.btn:hover {
+    color: white;
+    background-color: #1cc88a;
+    border: 1px #1cc88a solid;
 }
 
 article { 
@@ -110,7 +122,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -129,7 +141,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="fas fa-snowboarding"></i>
         </div>
         <div class="sidebar-brand-text mx-3">What's Upp</div>
       </a>
@@ -152,7 +164,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" >
+        <a class="nav-link collapsed" href="profile.html" >
             <i class="fas fa-fw fa-user-circle"></i>
          <span>Edit Profile</span>
         </a>
@@ -160,7 +172,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="events.html" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-calendar"></i>
           <span>Events</span>
         </a>
@@ -178,7 +190,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       </div>
 
       <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="discover.html" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-search"></i>
           <span>Discover</span>
         </a>
@@ -189,7 +201,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <a href="#" class="btn btn-success btn-icon-split" style="width:80%;margin-left:10%;">
+      <a href="#" class="btn btn-icon-split" style="width:80%;margin-left:10%;">
         <span class="icon text-white-50">
             <i class="fas fa-fw fa-plus"></i>
         </span>
@@ -387,13 +399,6 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; What's Upp 2019</span>
-          </div>
-        </div>
-      </footer>
       <!-- End of Footer -->
 
     </div>
