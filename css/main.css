@@ -1,14 +1,14 @@
 .bg-gradient-primary {
-	background-image: linear-gradient(180deg,#C99700 10%,#E1B900 100%);
-	background-color: #0C2340;
+	background-image: linear-gradient(180deg,#C99700 10%,#E1B900 100%) !important;
+	background-color: #0C2340 !important;
 }
 
 .sidebar {
-	background-image: linear-gradient(180deg,#0C2340 10%,#0C2340 100%);
+	background-image: linear-gradient(180deg,#0C2340 10%,#0C2340 100%) !important;
 }
 
 .container {
-	background-color: #0C2340;
+	background-color: rgb(255,255,255);
 }
 
 .bg-login-image {
@@ -29,4 +29,12 @@
 	margin-bottom: 25px;
 	margin-right: 25px;
 	width: 30%;
+}
+
+.card, .card-header, .card-body, .card-body::after {
+    border: 1px solid white !important; 
+}
+
+.btn-icon-split .icon {
+    background-color: rgb(174,145,66); !important;
 }
