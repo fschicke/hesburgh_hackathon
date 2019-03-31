@@ -84,4 +84,5 @@ class eventsController:
 			parsed.append(entry)
 		return json.dumps({"result": parsed})
 
-		
+	def GET_TAGS(self):
+		return self.wudb.get_tags()

@@ -38,7 +38,7 @@ class usersController:
 			
 	
 	# edit existing user
-	def PUT_USER(self, net_ID):
+	def PUT_USER(self, net_id):
 		msg = json.loads(cherrypy.request.body.read().decode('utf-8'))
 		userList = []
 		userList.append(msg["admin"])
@@ -49,6 +49,6 @@ class usersController:
 		userList.append(list(msg["tags"]))
 		userList.append(int(msg["classNum"]))
 		userList.append(list(msg["events"]))
-		self.wudb.set_user(net_ID, userList)
+		self.wudb.set_user(net_id, userList)
 		return json.dumps({"result": "success"})
 		
