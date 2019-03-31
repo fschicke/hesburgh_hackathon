@@ -17,7 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
@@ -55,10 +55,6 @@
                     <button type="button" class="btn btn-primary btn-user btn-block" onclick="tryLogin()">
                       Login
                     </button>
-                    <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
                   </form>
                   <hr>
                   <div class="text-center">
@@ -89,15 +85,6 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
   <script>
-    $.ajax({
-      type	:	"GET",
-      url	:	"http://159.203.182.180:5069/users/aslavin",
-      success	:	function(data){
-        if(data["result"] == "success"){
-          console.log(data);
-        }
-      }
-    });
   </script>
 </body>
 
@@ -106,22 +93,41 @@
 
     function tryLogin() {
         if ($('#InputEmail').val() == "") {
-            return
+	    alert("Please Enter Email");
+            return;
         }
 
-        if ($('#InputPassword').val() == "haha") {
-            document.location='./cards.html'
+        if ($('#InputPassword').val() == "") {
+            alert("Please Enter Password");
             return
         }
-        if (($('#InputEmail').val() == "asdf") && ($('#InputPassword').val() == "bob")){
-            console.log('do i get here?')
-            document.location='./blank.html'
-            return
+	var uid = ($('#InputEmail').val()).split("@");
+        if(uid.length < 2){
+          alert("Please enter email address with @nd.edu");
+          return;
         }
-        document.location='./index.html'
+	uid = uid[0];
+	console.log(uid);
+        $.ajax({
+          type	:	"GET",
+          url	:	"http://159.203.182.180:5000/users/" + uid,
+          success	:	function(data){
+	    var obj = JSON.parse(data);
+            console.log($('#InputPassword').val());
+	    if(obj.user.password == $('#InputPassword').val()){
+              document.location='./events.html';
+              return;
+            }
+            else{
+              alert("Incorrect Password");
+            }
+          },
+          error: function(){
+            alert("Failure");
+          }
+        });
         return
     }
 
 
 </script>
-

@@ -20,6 +20,16 @@
 }
 
 .btn {
-	background-color: #0C2340;
-	border-color: #C99700;
+	background-color: #0C2340 !important;
+	border-color: #C99700 !important;
+}
+
+.pill_tag2 {
+	background-color: #0C2340 !important;
+	border-color: #C99700 !important;
+}
+
+.btn-success { 
+	color: #0C2340 !important;
+	border-color: #C99700 !important;
 }

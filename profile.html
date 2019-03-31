@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<script>
+    var all_activities = ["KSA", "AAA", "LUG", "St. Liams", "Swimming", "Health", "Mental Health", "Frisbee", "Rock Climbing", "Business"].sort();
+    var my_activities = ["Engineering", "CSE", "5K", "Hackathon"].sort();
+</script>
 
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,16 +30,59 @@ a.btn:hover {
     border: 1px #1cc88a solid;
 }
     
-    </style>
+</style>
 
 
+<style>
+	.border-bottom-success {
+		border-bottom: black !important;
+	}
+
+	.border-bottom-primary {
+		border-bottom: black !important;
+	}
+	
+	.border-left-primary {
+		border-left: black !important;
+	}
+
+	.border-left-success {
+		border-left: black !important;
+	}
+
+	.modal-footer {
+		margin-top: 25px;
+	}	
+  </style>
+
+<style>
+	.border-bottom-success {
+		border-bottom: black !important;
+	}
+
+	.border-bottom-primary {
+		border-bottom: black !important;
+	}
+	
+	.border-left-primary {
+		border-left: black !important;
+	}
+
+	.border-left-success {
+		border-left: black !important;
+	}
+
+	.modal-footer {
+		margin-top: 25px;
+	}	
+</style>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
+  <link href="css/profile.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -46,7 +94,7 @@ a.btn:hover {
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="events.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-snowboarding "></i>
         </div>
@@ -57,15 +105,12 @@ a.btn:hover {
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item text-center">
-          <span style="color:white">Welcome, username!</span>
-      </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
+
 
       <!-- Heading -->
-      <div class="sidebar-heading" style="margin-top:25px;">
+      <div class="sidebar-heading" style="margin-top:15px;">
         About Me
       </div>
 
@@ -104,11 +149,10 @@ a.btn:hover {
 
       </li>
 
-
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <a href="#" class="btn btn-success btn-icon-split" style="width:80%;margin-left:10%;">
+      <a href="newevent.html" class="btn btn-success btn-icon-split" style="width:80%;margin-left:10%;">
         <span class="icon text-white-50">
             <i class="fas fa-fw fa-plus"></i>
         </span>
@@ -120,8 +164,8 @@ a.btn:hover {
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
+    <!-- End Sidebar -->
     </ul>
-    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -162,11 +206,48 @@ a.btn:hover {
 			
 			<div class="row">
 				<div class="form-group col-s4">
-					<label>Tags:</label>
-					<input type="password" class="form-control form-control-user" id="tags" placeholder="">
+					<label>Tags</label>
+					<button type="button" class="btn btn-primary btn-user btn-block" onclick="modalOn()">
+                      				Edit Tags
+                    			</button>
 				</div>
 			</div>
 
+			<div class="row" style="width: 15%; margin: 0 auto; margin-top: 25px">
+				<button type="button" class="btn btn-primary btn-user btn-block">
+                      			Save Changes
+                    		</button>
+			</div>
+
+<!-- Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valid Account! Just One More Step...</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p align="left">
+          What are you interested in knowing about? Select tags you would like to be notified about! 
+</br></br>
+The more tags you have, the more you'll see! The more focused your tags are, the more personalized the content will be!
+        </p>
+        <h3> Your Tags</h3>  
+        <div id="userChips" class="border-bottom-success  border-left-success">
+        </div>
+        <h3 style="margin-top: 25px;">Possible Tags</h3>
+        <div id="allTags" class="border-left-primary border-bottom-primary">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick=moveit()>Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
         <!-- /.container-fluid -->
 
@@ -219,3 +300,72 @@ a.btn:hover {
 </body>
 
 </html>
+
+<script>
+    function moveit(){
+      document.location = './events.html';
+      return;
+    }
+    console.log(all_activities.length);
+    console.log(typeof all_activities);
+    var i = 0;
+    for (i; i < all_activities.length; i++) {
+      $('#allTags').append('<button type="button" class="pill_tag1 btn btn-warning btn-sm" id="temporary_id" style="margin:2px">' + all_activities[i] + '</button>');
+      document.getElementById("temporary_id").id = all_activities[i];
+      console.log(document.getElementById(all_activities[i]));
+    }
+    i = 0;
+    for (i; i < my_activities.length; i++){
+      $('#userChips').append('<button type="button" class="pill_tag2 btn btn-warning btn-sm" id="temporary_id" style="margin:2px">' + my_activities[i] + '</button>');
+      document.getElementById("temporary_id").id = my_activities[i];
+      console.log(document.getElementById(my_activities[i]));
+      
+    }
+</script>
+
+<script>
+    $("#allTags").on("click", ".pill_tag1", function(){
+        if(all_activities.includes(this.id)){
+            my_activities.push(this.id);
+            all_activities.splice( all_activities.indexOf(this.id), 1 );
+            addTag(this.id);
+            console.log(all_activities);
+            return;
+        }
+        return;
+    });
+    
+    $("#userChips").on("click", ".pill_tag2", function(){
+        console.log("okokok");    
+        if(my_activities.includes(this.id)) {
+            console.log("do i ever make it here");
+            all_activities.push(this.id);
+            my_activities.splice(my_activities.indexOf(this.id), 1 );
+            removeTag(this.id);
+            return;
+        }
+        console.log(my_activities);
+        return
+    }); 
+    
+    function addTag(tagId) {
+        var element = document.getElementById(tagId);
+        element.parentNode.removeChild(element);
+        $('#userChips').append('<button type="button" class="pill_tag2 btn btn-success btn-sm" id="temporary_id" style="margin:2px">' + tagId + '</button>');
+        console.log(my_activities);
+        document.getElementById("temporary_id").id = tagId;
+    }
+    
+    function removeTag(tagId){
+        var element = document.getElementById(tagId);
+        element.parentNode.removeChild(element);
+        $('#allTags').append('<button type="button" class="pill_tag1 btn btn-warning btn-sm" id="temporary_id" style="margin:2px">' + tagId + '</button>');
+        document.getElementById("temporary_id").id = tagId;
+    }
+    
+    function modalOn(){
+        console.log('HELLLLLLLP');
+        $('#logoutModal').modal();
+    }
+</script>
+

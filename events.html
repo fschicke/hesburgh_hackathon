@@ -131,7 +131,6 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
 </head>
 
 <body id="page-top">
-
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -139,7 +138,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="events.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-snowboarding"></i>
         </div>
@@ -149,16 +148,10 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item text-center">
-          <span style="color:white">Welcome, username!</span>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+      <!-- Nav Item - Dashboard --> 
 
       <!-- Heading -->
-      <div class="sidebar-heading" style="margin-top:25px;">
+      <div class="sidebar-heading" style="margin-top:15px;">
         About Me
       </div>
 
@@ -201,7 +194,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <a href="#" class="btn btn-icon-split" style="width:80%;margin-left:10%;">
+      <a href="newevent.html" class="btn btn-icon-split" style="width:80%;margin-left:10%;">
         <span class="icon text-white-50">
             <i class="fas fa-fw fa-plus"></i>
         </span>
@@ -210,7 +203,7 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline" style="margin-top:30px">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle border-0" id="sidebarToggle" onclick="checkcheck()"></button>
       </div>
 
     </ul>
@@ -259,21 +252,23 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
                 <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
                     <div class="row">
                         <div class="col-sm-2">
-                            <h6 class="text-center m-0">9:00a</h6>
+                            <h6 class="text-center m-0">TIME</h6>
                         </div>
                         <div class="col-sm-7">
-                        <h6 class="text-center m-0 font-weight-bold text-primary">Jump Rope Women's Basketball Halftime Show</h6>
+                        <h6 class="text-center m-0 font-weight-bold text-primary">NAME OF EVENT HERE</h6>
                         </div>
-                        <div class="col-sm-3"><h6 class="text-center m-0">South Dining Hall</h6></div>
+                     <div class="col-sm-3"><h6 class="text-center m-0">LOCATION</h6></div>
                     </div>
 
                 </a>
                 <!-- Card Content - Collapse -->
                 <div class="collapse" id="collapseCardExample2">
                   <div class="card-body">
-                    End Time: 4:00p<br> 
-                    Description: Jump Rope performs at Notre Dame women's basketball halftime show! Come out and support, the game itself starts at 3:00.<br>
-                  </div>
+                    End Time: INSERT END TIME<br> 
+                    Description: INSERT DESCRIPTION<br>
+                  	Attendance: INSERT ATTENDANCE<br>	
+					Tags: INSERT TAGS<br>
+				  </div>
                 </div>
               </div>
         
@@ -282,87 +277,26 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
     <div>
     <input type="radio" name="size" id="1" value="1"/> 
     <label for="1">M</label>
-            <article>
+            <article id="mondayyy">
                           <!-- Collapsable Card Example -->
-              <div class="card shadow mb-4 currentEvent">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample2">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div></article>
+            </article>
     </div>
     <div>
     <input type="radio" name="size" id="2" value="2" />     
     <label for="2">Tu</label>
     <article>
-<!-- Collapsable Card Example -->
-              <div class="card shadow mb-4 currentEvent">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div>
-              <!-- Collapsable Card Example -->
-              <div class="card shadow mb-4 currentEvent">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample2">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div>
+
         </article>
     <div>
     <input type="radio" name="size" id="3" value="3" />     
     <label for="3">W</label>
         <article>
-                      <!-- Collapsable Card Example -->
-              <div class="card shadow mb-4 currentEvent">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample2">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div></article>
+          </article>
     </div>
     <div>    
     <input type="radio" name="size" id="4" value="4" />     
     <label for="4">Th</label>
         <article>
-                      <!-- Collapsable Card Example -->
-              <div class="card shadow mb-4 currentEvent">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample2">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div>
         </article>
     </div>
   <div>    
@@ -375,19 +309,6 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
     <label for="6">S</label>
         <article>
         
-        <div class="card shadow mb-4 currentEvent">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                  <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-                </a>
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample2">
-                  <div class="card-body">
-                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click on the card header</strong> to see the card body collapse and expand!
-                  </div>
-                </div>
-              </div>
-
         </article>
     </div>
   
@@ -450,6 +371,43 @@ div > input:checked ~ article { width: 65%; opacity: 1; }
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
       <!-- Personal scripts -->
       <script src="./static.js"></script>
+  <script>
+    var event_list = 101010;
+    function initial_stuff() {
+      $.ajax({
+        type	:	"GET",
+        url	:	"http://159.203.182.180:5000/events/",
+        success	:	function(data){
+          event_list = JSON.parse(data);
+          console.log(event_list.result[0].tags);
+          console.log(typeof event_list);
+        },
+        error	:	function(){
+          alert("Failure");
+        }
+      })
+      console.log(event_list);
+      var i = 0;
+      //while(event_list.result[i] !== undefined){
+      //  console.log(i);
+      //i++;
+      //} 
+    }
+    initial_stuff();
+    function checkcheck(){
+      console.log(event_list);
+      $('#mondayyy').append('<div class="card shadow mb-4 currentEvent">');
+      $('#mondayyy').append('<a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">');
+      $('#mondayyy').append('<div class="row">');
+      $('#mondayyy').append('<div class="col-sm-2">');
+      $('#mondayyy').append('<h6 class="test-center m-0">' + "TIME HERE" + '</h6>');
+      $('#mondayyy').append('</div>' + '<div class="col-sm-7">');
+      $('#mondayyy').append('<h6 class="test-center m-0 font-weight-bold text-primary">' + event_list.result[0].title + '</h6>');
+      $('#mondayyy').append('</div>' + '<div class="col-sm-3">' + '<h6 class="text-center m-0">' + event_list.result[0].location + '</h6>' + '</div>' + '</div>' + '</a>');
+      $('#mondayyy').append('<div class="collapse" id="collapseCardExample2">');
+      $('#mondayyy').append('<div class="card-body">' + "kjdbkjbdbakabfkbj" + '</div>' + '</div>' + '</div>');
+    }
+</script>
   </head>
 
 </body>

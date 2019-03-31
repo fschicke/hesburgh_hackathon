@@ -76,7 +76,7 @@
                     <input type="email" class="form-control form-control-user" id="InputEmail" placeholder="Notre Dame email">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="ClassYear" placeholder="Repeat Password">
+                    <input type="text" class="form-control form-control-user" id="Major" placeholder="Major">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -124,7 +124,7 @@ The more tags you have, the more you'll see! The more focused your tags are, the
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" >Save Changes</button>
+        <button type="button" class="btn btn-primary" onclick=moveit()>Save Changes</button>
       </div>
     </div>
   </div>
@@ -143,6 +143,10 @@ The more tags you have, the more you'll see! The more focused your tags are, the
 
 </body>
   <script>
+    function moveit(){
+      document.location = './events.html';
+      return;
+    }
     console.log(all_activities.length);
     console.log(typeof all_activities);
     var i = 0;
@@ -182,7 +186,7 @@ The more tags you have, the more you'll see! The more focused your tags are, the
     function addTag(tagId) {
         var element = document.getElementById(tagId);
         element.parentNode.removeChild(element);
-        $('#userChips').append('<button type="button" class="pill_tag2 btn btn-success btn-sm" id="temporary_id" style="margin:2px">' + tagId + '</button>');
+        $('#userChips').append('<button type="button" class="pill_tag2 btn btn-warning btn-sm" id="temporary_id" style="margin:2px">' + tagId + '</button>');
         console.log(my_activities);
         document.getElementById("temporary_id").id = tagId;
     }

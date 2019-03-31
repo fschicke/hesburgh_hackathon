@@ -23,7 +23,7 @@
 	background-color: #0C2340;
 	border-color: #C99700;
 }
-/*
+
 .form-group {
 	margin-left: 25px;
 	margin-bottom: 25px;
@@ -31,6 +31,27 @@
 	width: 30%;
 }
 
+	.border-bottom-success {
+		border-bottom: black !important;
+	}
+
+	.border-bottom-primary {
+		border-bottom: black !important;
+	}
+	
+	.border-left-primary {
+		border-left: black !important;
+	}
+
+	.border-left-success {
+		border-left: black !important;
+	}
+
+	.modal-footer {
+		margin-top: 25px;
+	}	
+
+/*
 <<<<<<< HEAD
 
 .card, .card-header, .card-body, .card-body::after {
