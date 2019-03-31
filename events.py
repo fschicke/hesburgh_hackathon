@@ -63,3 +63,25 @@ class eventsController:
 		eid = int(eid)
 		self.wudb.vote(eid)
 		return json.dumps({"result": "success"})
+	
+	# return list of top 5 events for a week
+	def TOP5(self):
+		msg = json.loads(cherrypy.request.body.read().decode('utf-8'))
+		date = list(msg["date"])
+		retDict = self.wudb.top5(date) # dict of events indexed by eid
+		parsed = []
+		for key, val in retDict.items():
+			entry = {}
+			entry["eid"] = key
+			entry["title"] = val[0]
+			entry["description"] = val[1]
+			entry["tags"] = val[2]
+			entry["startDate"] = val[3]
+			entry["endDate"] = val[4]
+			entry["eventType"] = val[5]
+			entry["maxAttendance"] = val[6]
+			entry["location"] = val[7]
+			parsed.append(entry)
+		return json.dumps({"result": parsed})
+
+		

@@ -23,13 +23,14 @@
 	background-color: #0C2340;
 	border-color: #C99700;
 }
-
+/*
 .form-group {
 	margin-left: 25px;
 	margin-bottom: 25px;
 	margin-right: 25px;
 	width: 30%;
 }
+<<<<<<< HEAD
 
 .card, .card-header, .card-body, .card-body::after {
     border: 1px solid white !important; 
@@ -38,3 +39,6 @@
 .btn-icon-split .icon {
     background-color: rgb(174,145,66); !important;
 }
+=======
+*/
+>>>>>>> 286a9dee7e09883279a5cab6211dbdf02e9f1070

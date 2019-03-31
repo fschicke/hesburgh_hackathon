@@ -3,6 +3,7 @@
 
 import requests
 import json
+import operator
 
 class _whatsupp_database:
 	def __init__(self):
@@ -28,7 +29,7 @@ class _whatsupp_database:
 			endDate = [int(x) for x in endDate]
 			eventType = int(separated[6])
 			maxAttendance = int(separated[7])
-			location = separated[8].strip(' \t\n')
+			location = separated[8].strip('\n')
 			self.events[int(separated[0])] = [title, description, tags, startDate, endDate, eventType, maxAttendance, location]
 	
 	def load_users(self, user_file):
@@ -48,6 +49,14 @@ class _whatsupp_database:
 			events = [x.strip() for x in separated[8].strip(' \t\n').split(',')]
 			events = [int(x) for x in events]
 			self.users[separated[0]] = [admin, email, password, fName, lName, tags, classNum, events]
+	
+	# load in dummy votes
+	def load_votes(self, votes_file):
+		self.votes = {}
+		inData = open(votes_file, "r")
+		for line in inData.readlines():
+			separated = line.split("::")
+			self.votes[int(separated[0])] = int(separated[1].strip('\n'))
 
 	# return true if password/username match up
 	def authenticate(self, username, password):
@@ -114,3 +123,17 @@ class _whatsupp_database:
 		else:
 			self.votes[eid] = 1
 
+	# return dict of top 5 events after date indexed by eid
+	def top5(self, date):
+		sortedVotes = sorted(self.votes.items(), key=operator.itemgetter(1))
+		counter = 0
+		retDict = {} # list of events
+		sortedVotes.reverse()
+		for vote in sortedVotes:
+			eventDate = self.events[vote[0]][3]
+			if (eventDate[0] == date[0] and eventDate[1] == date[1] and eventDate[2]-7 < date[2] and eventDate[2] >= date[2]) or (eventDate[0] == date[0] and eventDate[1]-1 == date[1] and eventDate[2] < 7):
+				counter += 1
+				retDict[vote[1]] = self.events[vote[0]]
+			if counter == 5:
+				break
+		return retDict
