@@ -85,4 +85,5 @@ class eventsController:
 		return json.dumps({"result": parsed})
 
 	def GET_TAGS(self):
-		return self.wudb.get_tags()
+		ret =  self.wudb.get_tags()
+		return json.dumps({"result":ret})

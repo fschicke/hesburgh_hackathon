@@ -10,6 +10,7 @@ class _whatsupp_database:
 		self.events = {} # uses event ID as key
 		self.users = {} # uses profiel ID as a key
 		self.votes = {}
+		self.tags = []
 
 	# opens events file and reads all data into the events dictionary
 	def load_events(self, events_file):
@@ -57,6 +58,18 @@ class _whatsupp_database:
 		for line in inData.readlines():
 			separated = line.split("::")
 			self.votes[int(separated[0])] = int(separated[1].strip('\n'))
+	
+	# load in all tags
+	def load_tags(self, tags_file):
+		self.tags = []
+		inData = open(tags_file, "r")
+		for line in inData.readlines():
+			self.tags.append(line.strip(' \t\n'))
+
+	# return list of all tags
+	def get_tags(self):
+		self.tags.sort()
+		return self.tags
 
 	# return true if password/username match up
 	def authenticate(self, username, password):
